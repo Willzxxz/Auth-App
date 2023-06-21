@@ -6,11 +6,13 @@ import axios from "../api/axios";
 import {
   Box,
   Button,
+  Center,
   FormControl,
   FormLabel,
   Heading,
   Input,
   Stack,
+  Text,
   VStack,
 } from "@chakra-ui/react";
 const LOGIN_URL = "/login";
@@ -90,6 +92,23 @@ const Login = () => {
       <VStack h="inherit">
         <Box py="20rem">
           <Heading>Sign In</Heading>
+        </Box>
+        <Box
+          position="absolute"
+          mt="-80rem"
+          w="fit-content"
+          color="cyan"
+          as="b"
+        >
+          <Text>
+            Use username "Editor" or "Admin" with password "Qwerty12!" to access
+            those 2 roles.
+          </Text>
+          <Center>
+            <Text mt="10rem">
+              Or just create a new user. to access User role.
+            </Text>
+          </Center>
         </Box>
         <form onSubmit={handleSubmit}>
           <FormControl>

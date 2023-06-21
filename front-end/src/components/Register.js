@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import {
   Box,
   Button,
+  Center,
   FormControl,
   FormErrorMessage,
   FormHelperText,
@@ -104,12 +105,22 @@ const Register = () => {
   return (
     <>
       {success ? (
-        <section>
-          <h1>Success!</h1>
-          <p>
-            <a href="#">Sign In</a>
-          </p>
-        </section>
+        <Center>
+          <VStack mt="8%">
+            <Heading>Success!</Heading>
+            <Link to="/login">
+              <Button
+                w="150rem"
+                size="lg"
+                rounded="10rem"
+                variant="solid"
+                mt="50rem"
+              >
+                Sign In
+              </Button>
+            </Link>
+          </VStack>
+        </Center>
       ) : (
         <>
           <Box

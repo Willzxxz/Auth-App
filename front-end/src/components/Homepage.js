@@ -1,15 +1,7 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../context/AuthProvider";
-import {
-  Box,
-  Button,
-  Center,
-  Flex,
-  Heading,
-  Text,
-  Link,
-} from "@chakra-ui/react";
+import { Box, Button, Center, Flex, Heading, Text } from "@chakra-ui/react";
 
 const Homepage = () => {
   const { auth, setAuth } = useContext(AuthContext);
@@ -38,7 +30,7 @@ const Homepage = () => {
       <Center>
         {!isLoggedIn ? (
           <Flex w="400rem" mt="100rem" justifyContent="space-between">
-            <Link href="/login">
+            <Link to="/login">
               <Button
                 w="150rem"
                 href="/login"
@@ -50,7 +42,7 @@ const Homepage = () => {
                 Login
               </Button>
             </Link>
-            <Link href="/register">
+            <Link to="/register">
               <Button
                 w="150rem"
                 size="lg"
@@ -65,7 +57,7 @@ const Homepage = () => {
           </Flex>
         ) : (
           <Flex w="400rem" mt="100rem" justifyContent="space-between">
-            <Link href="/dashboard">
+            <Link to="/dashboard">
               <Button
                 w="150rem"
                 href="/login"
@@ -77,7 +69,7 @@ const Homepage = () => {
                 Dashboard
               </Button>
             </Link>
-            <Link href="/register">
+            <Link to="/register">
               <Button
                 w="150rem"
                 size="lg"
