@@ -21,7 +21,7 @@ const Home = () => {
     // if used in more components, this should be in context
     // axios to /logout endpoint
     setAuth({});
-    navigate("/linkpage");
+    navigate("/");
   };
 
   return (
@@ -62,6 +62,16 @@ const Home = () => {
                 Go to the Lounge
               </Button>
             </Link>
+            <Link to="/">
+              <Button
+                rounded="10rem"
+                color="white"
+                bgColor="black"
+                _hover={{ color: "black", bg: "white", border: "black" }}
+              >
+                Go to the Home page
+              </Button>
+            </Link>{" "}
             <Link to="/linkpage">
               <Button
                 rounded="10rem"
