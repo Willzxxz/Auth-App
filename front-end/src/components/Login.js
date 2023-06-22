@@ -31,6 +31,8 @@ const Login = () => {
   const errRef = useRef();
 
   const [user, setUser] = useState("");
+  const [displayUser, setDisplayUser] = useState("");
+
   const [pwd, setPwd] = useState("");
   const [errMsg, setErrMsg] = useState("");
 
@@ -125,8 +127,12 @@ const Login = () => {
                   id="username"
                   ref={userRef}
                   autoComplete="off"
-                  onChange={(e) => setUser(e.target.value)}
-                  value={user}
+                  onChange={(e) => {
+                    const lowercaseValue = e.target.value.toLowerCase();
+                    setUser(lowercaseValue);
+                    setDisplayUser(e.target.value);
+                  }}
+                  value={displayUser}
                   required
                 />
               </Box>
