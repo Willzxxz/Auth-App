@@ -15,6 +15,7 @@ import {
   Input,
   Stack,
   VStack,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { Field, Form, Formik } from "formik";
 
@@ -23,6 +24,8 @@ const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = "/register";
 
 const Register = () => {
+  useBreakpointValue({ m: true, d: false });
+
   const userRef = useRef();
   const errRef = useRef();
 
@@ -106,7 +109,7 @@ const Register = () => {
     <>
       {success ? (
         <Center>
-          <VStack mt="8%">
+          <VStack mt="100rem">
             <Heading>Success!</Heading>
             <Link to="/login">
               <Button
@@ -128,7 +131,7 @@ const Register = () => {
             w="fit-content"
             h="fit-content"
             m="auto"
-            mt="8%"
+            mt={{ d: "100rem", m: "100rem" }}
             rounded="10rem"
           >
             <p

@@ -14,10 +14,13 @@ import {
   Stack,
   Text,
   VStack,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 const LOGIN_URL = "/login";
 
 const Login = () => {
+  useBreakpointValue({ m: true, d: false });
+
   const { setAuth } = useAuth();
 
   const navigate = useNavigate();
@@ -79,7 +82,7 @@ const Login = () => {
       w="fit-content"
       h="fit-content"
       m="auto"
-      mt="8%"
+      mt={{ d: "100rem", m: "100rem" }}
       rounded="10rem"
     >
       <p
@@ -99,6 +102,8 @@ const Login = () => {
           w="fit-content"
           color="cyan"
           as="b"
+          px="10rem"
+          fontSize="14rem"
         >
           <Text>
             Use username "Editor" or "Admin" with password "Qwerty12!" to access
